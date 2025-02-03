@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+        <title>Experiments</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html">
+                <svg width="30" height="30" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+                    <path fill="#231F20" d="M62.79,29.172l-28-28C34.009,0.391,32.985,0,31.962,0s-2.047,0.391-2.828,1.172l-28,28 c-1.562,1.566-1.484,4.016,0.078,5.578c1.566,1.57,3.855,1.801,5.422,0.234L8,33.617V60c0,2.211,1.789,4,4,4h16V48h8v16h16 c2.211,0,4-1.789,4-4V33.695l1.195,1.195c1.562,1.562,3.949,1.422,5.516-0.141C64.274,33.188,64.356,30.734,62.79,29.172z"></path> </g>
+                </svg>
+            </a>
+            <h1>Experiments</h1>
+        </header>
+
+        <main>
+            <dialog open>
+                <p>This page contains all tags that I felt were unfit for the main portfolio portion of the site.</p>
+                <form method="dialog">
+                    <button>OK</button>
+                </form>
+            </dialog>
+
+            <section>
+                <h2>JavaScript Variable Practice</h2>
+                <p>Both <code><dfn>let</dfn></code> and <code><dfn>var</dfn></code> are used to declare variables in JavaScript.
+                 They differ in their scope.</p>
+                <dl>
+                    <dt><code>let</code></dt>
+                    <dd>Scope: Immediate enclosing block denoted by <code>{}</code></dd>
+
+                    <dt><code>var</code></dt>
+                    <dd>Scope: Immediate function body</dd>
+                </dl>
+
+                <p><code>let</code> Example:</p>
+                <pre>
+                    let city = 'San Diego';
+    
+                    function welcomeCity() {
+                        alert(`Welcome to ${city}!`);
+                    }
+    
+                    welcomeCity();
+                </pre>
+
+                <p>As always, don't forget to <kbd>Cmd</kbd> + <kbd>s</kbd> to save your code as you work!</p>
+            </section>
+
+            <section>
+                <h2>San Diego Exploratory Items</h2>
+                <figure>
+                    <figcaption>San Diego Beach Report: <del>2022</del>
+                        <ins>2023</ins></figcaption>
+                    <img src="media/sd-beach.png" alt="San Diego Beach Report 2023" wdith="700" height="450"/>
+                    
+                    <p>Source:<cite>
+                        <a href="https://siocpg.ucsd.edu/data-products/beach-report-guide/beach-report-2023/"
+                        >UCSD Scripps Institution of Oceanography</a>
+                    </cite></p>
+                </figure>
+                
+                <p>Listen to the comforting sounds of the ocean!</p>
+                <audio controls src="media/ocean.mp3" />
+            </section>
+
+            <section>
+                <p>Look at this nice blue triangle created with <code>canvas</code>.</p>
+                <canvas id="myCanvas" width="300" height="300"></canvas>
+                <script>
+                    let canvas = document.getElementById('myCanvas');
+                    let context = canvas.getContext('2d');
+
+                    context.strokeStyle = 'blue';
+                    context.fillStyle = 'blue';
+                    context.lineWidth = 5;
+                    
+                    context.beginPath();
+                    context.moveTo(100, 50);
+                    context.lineTo(50, 150);
+                    context.lineTo(150, 150);
+                    context.closePath();
+                    context.stroke();
+                    context.fill();
+                </script>
+            </secion>
+        </main>
+    </body>
+
+    <footer>
+        <hr>
+        <p>Built for <b><i>WI25 CSE 134B</i></b>.</p>
+        <address>aml027@ucsd.edu</address>
+    </footer>
+</html>
