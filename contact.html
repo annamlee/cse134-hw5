@@ -21,49 +21,44 @@
                 <fieldset>
                     <legend>Personal Information</legend>
                     <ol>
-                        <div>
-                            <li>
-                                <label for="fname">First Name:</label>
-                                <input type="text" name="fname" id="fname" required autofocus />
-                            </li>
-                            <li>
-                                <label for="lname">Last Name:</label>
-                                <input type="text" name="lname" id="lname" required autofocus />
-                            </li>
-                        </div>
-                        <div>
-                            <li>
-                                <label for="title">Title: </label>
-                                <input list="titles" name="title" id="title" />
-                                <datalist id="titles">
-                                    <option value="Mr"></option>
-                                    <option value="Mrs"></option>
-                                    <option value="Miss"></option>
-                                    <option value="Dr"></option>
-                                    <option value="Prof"></option>
-                                </datalist>
-                            </li>
-                            <li>
-                                <label for="email">Email:</label>
-                                <input type="email" name="email" id="email" required />
-                            </li>
-                        </div>
-                        <div>
-                            <li>
-                                <label for="phone">Phone Number:</label>
-                                <input type="phone" name="phone" id="phone" required />
-                            </li>
-                            <li>
-                                <label for="date">Date:</label>
-                                <input type="date" name="date" id="date" required />
-                            </li>
-                        </div>
+                        <li>
+                            <label for="fname">First Name:</label>
+                            <input type="text" name="fname" id="fname" required autofocus />
+                        </li>
+                        <li>
+                            <label for="lname">Last Name:</label>
+                            <input type="text" name="lname" id="lname" />
+                        </li>
+                        <li>
+                            <label for="title">Title: </label>
+                            <input list="titles" name="title" id="title" />
+                            <datalist id="titles">
+                                <option value="Mr"></option>
+                                <option value="Mrs"></option>
+                                <option value="Miss"></option>
+                                <option value="Dr"></option>
+                                <option value="Prof"></option>
+                            </datalist>
+                        </li>
+                        <li>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" required />
+                        </li>
+                        <li>
+                            <label for="phone">Phone Number:</label>
+                            <input type="phone" name="phone" id="phone" required />
+                        </li>
+                        <li>
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date" required />
+                        </li>
+                    </ol>
                 </fieldset>
                 <fieldset>
                     <legend>Send Message</legend>
                         <div>
                             <label for="subject">Subject:</label>
-                            <select name="subject" id="subject" required>
+                            <select name="subject" id="subject">
                                 <optgroup label="General">
                                     <option value="gen-inquiry">General Inquiry</option>
                                     <option value="feedback">Feedback</option>
@@ -81,7 +76,6 @@
                             id="message"
                             placeholder="Please write you message here"
                         ></textarea>
-                    </ol>
                 </fieldset>
                 <br>
                 <button>Send</button>
