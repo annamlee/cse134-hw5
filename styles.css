@@ -57,6 +57,7 @@ main {
 
 nav {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-around;
     align-items: center;
@@ -90,8 +91,11 @@ article {
     border: 2px solid var(--dark-green, #75b88d);
     border-radius: 0.5rem;
     padding: 5rem;
-    display: flex;
     align-items: center;
+}
+
+blockquote {
+    margin: 40px;
 }
 
 form {
