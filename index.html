@@ -6,6 +6,7 @@
         <meta name="description" content="Portfolio Site for CSE 134B" />
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
         <title>Anna Lee's Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>
@@ -15,30 +16,13 @@
 
         <main>
             <nav>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="experiments.html">Experiments</a></li>
-                </ul>
+                <button><a href="about.html">About</a></button>
+                <button><a href="projects.html">Projects</a></button>
+                <button><a href="contact.html">Contact</a></button>
             </nav>
         </main>
 
-        <hello-world></hello-world>
-        <script>
-            class HelloWorld extends HTMLElement {
-                constructor() {
-                    super();
-                    console.log("Hello world!");
-                }
-            }
-
-            // Define the custom element
-            customElements.define('hello-world', HelloWorld);
-        </script>
-
         <footer>
-            <hr>
             <p>Built for <b><i>WI25 CSE 134B</i></b>.</p>
             <address>aml027@ucsd.edu</address>
         </footer>

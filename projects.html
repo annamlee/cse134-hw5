@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
         <title>Anna's Projects</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>
@@ -14,71 +15,59 @@
                 </svg>
             </a>
             <h1>Projects</h1>
-            <search>
-                <form action="/search">
-                    <label for="query">Search:</label>
-                    <input type="search" id="query" name="q" placeholder="Type here..." required>
-                    <button type="submit">Go</button>
-                </form>
-            </search>
         </header>
 
         <main>
             <section class="project">
-                <hgroup>
-                    <h2>Schoolhouse Ghana</h2>
-                    <p>MongoDB, Express, React, Node</p>
-                </hgroup>
-                <p>Commissioned by the Godfreds Foundation and UCSD Global
-                    Ties program, worked with a team to build a file-management 
-                    system and servers for the Semanhyiya American School (SAS)
-                    in rural Ghana.
-                </p>
-                <details>
-                    <summary>Video Demo of Account Management</summary>
-                    <video width="500" controls>
-                        <source src="media/schoolhouse-ghana.mp4" type="video/mp4" />
-                    </video>
-                </details>
                 <picture>
                     <img src="media/global-ties.jpeg" alt="Global Ties Logo" width="250" height="250">
                 </picture>
+                <div class="project-desc">
+                    <hgroup>
+                        <h2>Schoolhouse Ghana</h2>
+                        <p><i>MongoDB, Express, React, Node</i></p>
+                    </hgroup>
+                    <p>Commissioned by the Godfreds Foundation and UCSD Global
+                        Ties program, worked with a team to build a file-management 
+                        system and servers for the Semanhyiya American School (SAS)
+                        in rural Ghana.
+                    </p>
+                </div>
             </section>
 
             <section class="project">
-                <hgroup>
-                    <h2>ReelReads</h2>
-                    <p>MongoDB, Express, React, Node</p>
-                </hgroup>
-                <p>Developed a full-stack application to give users personalized book recommendations
-                    based on their inputted movie title. Calculated book and movie plot similarity 
-                    using cosine similarity and TF-IDF.
-                </p>
                 <picture>
                     <img src="media/reelreads.png" alt="Global Ties Logo" width="250" height="250">
                 </picture>
+                <div class="project-desc">
+                    <hgroup>
+                        <h2>ReelReads</h2>
+                        <p><i>MongoDB, Express, React, Node</i></p>
+                    </hgroup>
+                    <p>Developed a full-stack application to give users personalized book recommendations
+                        based on their inputted movie title. Calculated book and movie plot similarity 
+                        using cosine similarity and TF-IDF.
+                    </p>
+                </div>
             </section>
             
             <section class="project">
-                <hgroup>
-                    <h2>Developer Journal</h2>
-                    <p>HTML, CSS, JavaScript</p>
-                </hgroup>
-                <p>Built an integrated calendar, markdown editor, task management system,, and sentiment 
-                    widget with 9 other developers. Employed Agile sprints to ensure adequate project progression.
-                </p>
-                <details>
-                    <summary>Explore the Developer Journal</summary>
-                    <iframe src="https://digitaldr3amt3am-journal.netlify.app/" height="400" width="800"></iframe>
-                </details>
                 <picture>
                     <img src="media/digital-dr3am-t3am.png" alt="Digital Dr3am T3am Logo" width="250" height="250">
                 </picture>
+                <div class="project-desc">
+                    <hgroup>
+                        <h2>Developer Journal</h2>
+                        <p><i>HTML, CSS, JavaScript</i></p>
+                    </hgroup>
+                    <p>Built an integrated calendar, markdown editor, task management system,, and sentiment 
+                        widget with 9 other developers. Employed Agile sprints to ensure adequate project progression.
+                    </p>
+                </div>
             </section>
         </main>
 
         <footer>
-            <hr>
             <p>Built for <b><i>WI25 CSE 134B</i></b>.</p>
             <address>aml027@ucsd.edu</address>
         </footer>

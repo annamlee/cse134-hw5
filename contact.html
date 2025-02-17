@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
         <title>Contact Anna</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>
@@ -20,39 +21,30 @@
             <form>
                 <fieldset>
                     <legend>Personal Information</legend>
-                    <ol>
-                        <li>
-                            <label for="fname">First Name:</label>
-                            <input type="text" name="fname" id="fname" required autofocus />
-                        </li>
-                        <li>
-                            <label for="lname">Last Name:</label>
-                            <input type="text" name="lname" id="lname" />
-                        </li>
-                        <li>
-                            <label for="title">Title: </label>
-                            <input list="titles" name="title" id="title" />
-                            <datalist id="titles">
-                                <option value="Mr"></option>
-                                <option value="Mrs"></option>
-                                <option value="Miss"></option>
-                                <option value="Dr"></option>
-                                <option value="Prof"></option>
-                            </datalist>
-                        </li>
-                        <li>
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" id="email" required />
-                        </li>
-                        <li>
-                            <label for="phone">Phone Number:</label>
-                            <input type="tel" name="phone" id="phone" required />
-                        </li>
-                        <li>
-                            <label for="date">Date:</label>
-                            <input type="date" name="date" id="date" required />
-                        </li>
-                    </ol>
+                        <label for="fname">First Name:</label>
+                        <input type="text" name="fname" id="fname" required autofocus />
+                        
+                        <label for="lname">Last Name:</label>
+                        <input type="text" name="lname" id="lname" />
+                        
+                        <label for="title">Title: </label>
+                        <input list="titles" name="title" id="title" />
+                        <datalist id="titles">
+                            <option value="Mr"></option>
+                            <option value="Mrs"></option>
+                            <option value="Miss"></option>
+                            <option value="Dr"></option>
+                            <option value="Prof"></option>
+                        </datalist>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required />
+                        
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" name="phone" id="phone" required />
+
+                        <label for="date">Date:</label>
+                        <input type="date" name="date" id="date" required />
                 </fieldset>
                 <fieldset>
                     <legend>Send Message</legend>
@@ -92,7 +84,6 @@
         </main>
 
         <footer>
-            <hr>
             <p>Built for <b><i>WI25 CSE 134B</i></b>.</p>
             <address>aml027@ucsd.edu</address>
         </footer>
