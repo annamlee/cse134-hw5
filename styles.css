@@ -103,9 +103,6 @@ form {
     gap: 2rem;
     max-width: 800px;
     margin: 0 auto;
-}
-
-fieldset {
     border: 2px solid var(--dark-green, #75b88d);
     padding: 1rem;
     border-radius: 0.5rem;
