@@ -20,7 +20,7 @@
         <main>
             <form action="https://httpbin.org/post" method="POST">
                 <div>
-                    <label for="name">Full Name: <span class="required">*</span></label>
+                    <label for="name">Name: <span class="required">*</span></label>
                     <input type="text" name="name" id="name" required autofocus minlength="2" maxlength="50" />
                     
                     <label for="email">Email: <span class="required">*</span></label>
@@ -33,34 +33,25 @@
                         id="message"
                         placeholder="Write your message here..."
                         required
-                        pattern = "^[a-zA-Z0-9\s.,!?']+$"
+                        minlength="10"
+                        maxlength="500"
                     ></textarea>
 
                     <input type="hidden" name="possible_bot" value="true" />
 
-                    <div>
-                        <output id="error-message"></output>
-                        <br>
-                        <output id="info-message"></output>
-                    </div>
+                    <output id="error-message"></output>
+                    <output id="info-message"></output>
 
                     <button>Send</button>
                 </div>
             </form>
-
-            <template>
-                <h3>Confirmation</h3>
-                <p>Your message has been sent.</p>
-            </template>
-
-            <noscript>
-                Error: JavaScript disabled!
-            </noscript>
         </main>
 
         <footer>
             <p>Built for <b><i>WI25 CSE 134B</i></b>.</p>
             <address>aml027@ucsd.edu</address>
         </footer>
+
+        <noscript>Error: JavaScript disabled!</noscript>
     </body>
 </html>
