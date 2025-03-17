@@ -18,52 +18,8 @@
         </header>
 
         <main>
-            <section class="project">
-                <picture>
-                    <img src="media/global-ties.jpeg" alt="Global Ties Logo" width="250" height="250">
-                </picture>
-                <div class="project-desc">
-                    <hgroup>
-                        <h2>Schoolhouse Ghana</h2>
-                        <p><i>MongoDB, Express, React, Node</i></p>
-                    </hgroup>
-                    <p>Commissioned by the Godfreds Foundation and UCSD Global
-                        Ties program, worked with a team to build a file-management 
-                        system and servers for the Semanhyiya American School (SAS)
-                        in rural Ghana.
-                    </p>
-                </div>
-            </section>
+            <section id="projects-container">
 
-            <section class="project">
-                <picture>
-                    <img src="media/reelreads.png" alt="Global Ties Logo" width="250" height="250">
-                </picture>
-                <div class="project-desc">
-                    <hgroup>
-                        <h2>ReelReads</h2>
-                        <p><i>MongoDB, Express, React, Node</i></p>
-                    </hgroup>
-                    <p>Developed a full-stack application to give users personalized book recommendations
-                        based on their inputted movie title. Calculated book and movie plot similarity 
-                        using cosine similarity and TF-IDF.
-                    </p>
-                </div>
-            </section>
-            
-            <section class="project">
-                <picture>
-                    <img src="media/digital-dr3am-t3am.png" alt="Digital Dr3am T3am Logo" width="250" height="250">
-                </picture>
-                <div class="project-desc">
-                    <hgroup>
-                        <h2>Developer Journal</h2>
-                        <p><i>HTML, CSS, JavaScript</i></p>
-                    </hgroup>
-                    <p>Built an integrated calendar, markdown editor, task management system,, and sentiment 
-                        widget with 9 other developers. Employed Agile sprints to ensure adequate project progression.
-                    </p>
-                </div>
             </section>
         </main>
 
@@ -71,5 +27,40 @@
             <p>Built for <b><i>WI25 CSE 134B</i></b>.</p>
             <address>aml027@ucsd.edu</address>
         </footer>
+
+        <script type="module" src="project-card.js"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', async () => {
+                console.log("DOM Content loaded");
+                const url = "https://api.jsonbin.io/v3/b/67d6475c8a456b796676a98c";
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+
+                    const jsonData = await response.json();
+                    jsonData.record.forEach(project => {
+                        const projectCard = document.createElement("project-card");
+                        projectCard.setAttribute("title", `${project.title}`);
+                        projectCard.setAttribute("image", `${project.image}`);
+                        projectCard.setAttribute("description", `${project.description}`);
+                        projectCard.setAttribute("link", `${project.link}`);
+                        document.getElementById("projects-container").appendChild(projectCard);
+                        console.log(`${project.title} ${project.image} ${project.description} ${project.link}`);
+                    });
+
+                } catch (error) {
+                    console.error(error.message);
+                }
+            });
+
+            document.getElementById('projects-container').addEventListener('do-something', (event) => {
+                let target = event.target;
+                target.style.border = target.style.border == "" ? "5px solid black" : "";
+            });
+        </script>
+
+        <noscript>Your browser does not support JavaScript!</noscript>
     </body>
 </html>
