@@ -18,6 +18,11 @@
         </header>
 
         <main>
+            <section class="button-container">
+                <button class="project-button" id="load-local">Load Local</button>
+                <button class="project-button" id="load-remote">Load Remote</button>
+            </section>
+
             <section id="projects-container">
 
             </section>
@@ -30,9 +35,27 @@
 
         <script type="module" src="project-card.js"></script>
         <script>
-            window.addEventListener('DOMContentLoaded', async () => {
-                console.log("DOM Content loaded");
-                const url = "https://api.jsonbin.io/v3/b/67d6475c8a456b796676a98c";
+            const url = "https://api.jsonbin.io/v3/b/67d6475c8a456b796676a98c";
+
+            function clearProjects() {
+                document.getElementById("projects-container").innerHTML = "";
+            }
+            
+            function displayProjects(projects) {
+                clearProjects();
+                projects.forEach(project => {
+                    const projectCard = document.createElement("project-card");
+                    projectCard.setAttribute("title", `${project.title}`);
+                    projectCard.setAttribute("image", `${project.image}`);
+                    projectCard.setAttribute("description", `${project.description}`);
+                    projectCard.setAttribute("link", `${project.link}`);
+                    document.getElementById("projects-container").appendChild(projectCard);
+                    console.log(`${project.title} ${project.image} ${project.description} ${project.link}`);
+                });
+            }
+
+            document.getElementById("load-remote").addEventListener("click", async () => {
+                console.log("Fetching remote data...");
                 try {
                     const response = await fetch(url);
                     if (!response.ok) {
@@ -40,18 +63,25 @@
                     }
 
                     const jsonData = await response.json();
-                    jsonData.record.forEach(project => {
-                        const projectCard = document.createElement("project-card");
-                        projectCard.setAttribute("title", `${project.title}`);
-                        projectCard.setAttribute("image", `${project.image}`);
-                        projectCard.setAttribute("description", `${project.description}`);
-                        projectCard.setAttribute("link", `${project.link}`);
-                        document.getElementById("projects-container").appendChild(projectCard);
-                        console.log(`${project.title} ${project.image} ${project.description} ${project.link}`);
-                    });
+                    localStorage.setItem("projects", JSON.stringify(jsonData.record));
+                    displayProjects(jsonData.record);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
 
-                } catch (error) {
-                    console.error(error.message);
+            document.getElementById("load-local").addEventListener("click", async () => {
+                console.log("Fetching local data...");
+                try {
+                    console.log("Loading local data...");
+                    const localData = localStorage.getItem("projects");
+                    if(localData) {
+                        displayProjects(JSON.parse(localData));
+                    } else {
+                        console.warn("No local data found");
+                    }
+                } catch (err) {
+                    console.logg(err.message);
                 }
             });
 
